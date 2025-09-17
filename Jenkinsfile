@@ -10,18 +10,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the app for the dev environment...'
+                echo 'Building the app...'
                 sh 'echo "Build commands for dev"'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying to Dev server at ${DEV_SERVER_IP}..."
-                sh '''
-                    # Use rsync for deployment
-                    rsync -avz -e "ssh -i ${PRIVATE_KEY_PATH} -o StrictHostKeyChecking=no" index.html ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
-                '''
+                echo "Deploying to ${DEV_SERVER_IP}..."
+
+                // Simple rsync deployment command
+                sh """
+                    rsync -avz -e 'ssh -i ${PRIVATE_KEY_PATH} -o StrictHostKeyChecking=no' index.html ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
+                """
             }
         }
     }
