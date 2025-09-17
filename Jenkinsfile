@@ -1,12 +1,12 @@
 pipeline {
     agent any
-
+    
     environment {
-        // Define the IP and username as environment variables
-        DEV_SERVER_IP = '192.168.56.105'  // Replace with your actual IP address
-        USERNAME = 'vboxuser'         // Replace with your actual username
+        DEV_SERVER_IP = '192.168.56.105'
+        USERNAME = 'vboxuser'
+        PRIVATE_KEY_PATH = '/var/lib/jenkins/.ssh/id_ed25519' // Correct path to your private key
     }
-
+    
     stages {
         stage('Build') {
             steps {
@@ -19,11 +19,9 @@ pipeline {
             steps {
                 echo "Deploying to Dev server at ${DEV_SERVER_IP}..."
                 sh '''
-                    # Copy the index.html to your Dev server using scp
-                    scp -o StrictHostKeyChecking=no -i /path/to/your/private_key index.html ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
+                    scp -o StrictHostKeyChecking=no -i ${PRIVATE_KEY_PATH} index.html ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
                 '''
             }
         }
     }
 }
-
