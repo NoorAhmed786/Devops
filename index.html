@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NoorAhmed Website Dashboard</title>
   <style>
+<<<<<<< HEAD
+=======
+    /* Global Styles */
+>>>>>>> e7e95ab (Updated index.html with new design)
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -12,6 +16,7 @@
       background: #f4f7f6;
       color: #333;
     }
+<<<<<<< HEAD
     /* Global Styles */
     .container {
       display: flex;
@@ -24,11 +29,74 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+=======
+
+    /* Main Container */
+    .container {
+      display: flex;
+      min-height: 100vh;
+      background: #e5e5e5;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 260px;
+      background: #0078d7;
+      color: white;
+      padding-top: 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #fff;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #fff;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      font-size: 1.1rem;
+      transition: 0.3s ease;
+    }
+    .sidebar a:hover {
+      background: #0064b7;
+      color: white;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      margin-left: 260px; /* Offset for sidebar */
+      padding: 30px;
+      background: #ffffff;
+      overflow: auto;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0078d7;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+>>>>>>> e7e95ab (Updated index.html with new design)
     }
     header h1 {
       margin: 0;
       font-size: 1.8rem;
     }
+<<<<<<< HEAD
     main {
       flex: 1;
       padding: 30px;
@@ -68,6 +136,19 @@
     .sidebar a:hover {
       background: #0078d7;
       color: white;
+=======
+    header button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    header button:hover {
+      background: #cc5200;
+>>>>>>> e7e95ab (Updated index.html with new design)
     }
 
     /* Content Section */
@@ -75,6 +156,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
+<<<<<<< HEAD
+=======
+      margin-top: 30px;
+>>>>>>> e7e95ab (Updated index.html with new design)
     }
     .card {
       background: #fff;
@@ -82,12 +167,42 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 20px;
       text-align: center;
+<<<<<<< HEAD
     }
     .card h3 {
       color: #0078d7;
     }
     .card p {
       color: #555;
+=======
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .card h3 {
+      color: #0078d7;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px 0;
+      margin-top: 30px;
+    }
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+>>>>>>> e7e95ab (Updated index.html with new design)
     }
 
     /* Responsiveness */
@@ -95,6 +210,12 @@
       .container {
         flex-direction: column;
       }
+<<<<<<< HEAD
+=======
+      main {
+        margin-left: 0;
+      }
+>>>>>>> e7e95ab (Updated index.html with new design)
       .sidebar {
         width: 100%;
         position: relative;
@@ -107,7 +228,11 @@
   <div class="container">
     <!-- Sidebar -->
     <div class="sidebar">
+<<<<<<< HEAD
       <h2 style="text-align: center; color: #fff;">Dashboard</h2>
+=======
+      <h2>Dashboard</h2>
+>>>>>>> e7e95ab (Updated index.html with new design)
       <a href="#">Home</a>
       <a href="#">Projects</a>
       <a href="#">Services</a>
@@ -120,7 +245,11 @@
       <header>
         <h1>Welcome to Noor's Dashboard 🎉</h1>
         <div>
+<<<<<<< HEAD
           <button style="background: #0078d7; color: white; border: none; padding: 10px 15px; border-radius: 5px;">Logout</button>
+=======
+          <button>Logout</button>
+>>>>>>> e7e95ab (Updated index.html with new design)
         </div>
       </header>
 
@@ -151,3 +280,7 @@
   </footer>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e7e95ab (Updated index.html with new design)
