@@ -3,44 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noor Website</title>
+  <title>Noor Website Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
+      background: #f4f7f6;
+      color: #333;
+    }
+    /* Global Styles */
+    .container {
+      display: flex;
+      min-height: 100vh;
     }
     header {
       background: #0078d7;
       color: white;
-      padding: 20px 0;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h1 {
+    header h1 {
       margin: 0;
+      font-size: 1.8rem;
     }
     main {
-      padding: 40px 20px;
+      flex: 1;
+      padding: 30px;
+      background: white;
+      overflow: auto;
     }
     footer {
-      margin-top: 40px;
+      text-align: center;
       background: #222;
       color: white;
-      padding: 10px;
+      padding: 15px;
+      position: relative;
+    }
+    footer p {
+      margin: 0;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 250px;
+      background: #333;
+      color: white;
+      padding-top: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+      font-size: 1.1rem;
+    }
+    .sidebar a:hover {
+      background: #0078d7;
+      color: white;
+    }
+
+    /* Content Section */
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    .card h3 {
+      color: #0078d7;
+    }
+    .card p {
+      color: #555;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Noornahmed.com 🎉</h1>
-  </header>
-  <main>
-    <h2>Hello from Ubuntu + GitHub + Apache!</h2>
-    <p>This page is being served using Apache on Ubuntu, and the code is pushed to GitHub using SSH.</p>
-    <p>Edit <code>index.html</code>, commit, and push to update your site.</p>
-  </main>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2 style="text-align: center; color: #fff;">Dashboard</h2>
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Services</a>
+      <a href="#">Team</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <header>
+        <h1>Welcome to Noor's Dashboard 🎉</h1>
+        <div>
+          <button style="background: #0078d7; color: white; border: none; padding: 10px 15px; border-radius: 5px;">Logout</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <!-- Card 1 -->
+        <div class="card">
+          <h3>Recent Activity</h3>
+          <p>View the latest updates and changes made on the website.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <h3>Analytics</h3>
+          <p>Check the website traffic and performance stats.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <h3>Settings</h3>
+          <p>Manage your account and configure the dashboard settings.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
   <footer>
     <p>&copy; 2025 Noor Ahmed | Powered by Apache + GitHub</p>
   </footer>
