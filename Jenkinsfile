@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'git@github.com:NoorAhmed786/devops.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building the app for the dev environment...'
