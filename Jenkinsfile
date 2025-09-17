@@ -1,12 +1,12 @@
 pipeline {
     agent any
-    
+
     environment {
         DEV_SERVER_IP = '192.168.56.105'
         USERNAME = 'vboxuser'
-        PRIVATE_KEY_PATH = '/var/lib/jenkins/.ssh/id_ed25519' // Correct path to your private key
+        PRIVATE_KEY_PATH = '/var/lib/jenkins/.ssh/id_ed25519'  // Correct path
     }
-    
+
     stages {
         stage('Build') {
             steps {
