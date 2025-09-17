@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DEV_SERVER_IP = '192.168.56.105'
-        USERNAME = 'vboxuser'
-        PRIVATE_KEY_PATH = '/var/lib/jenkins/.ssh/id_ed25519'  // Correct path
+        DEV_SERVER_IP = '192.168.56.105'  // Replace with your actual IP address
+        USERNAME = 'vboxuser'             // Replace with your actual username
+        PRIVATE_KEY_PATH = '/var/lib/jenkins/.ssh/id_ed25519'  // Path to the private key
     }
 
     stages {
@@ -19,7 +19,8 @@ pipeline {
             steps {
                 echo "Deploying to Dev server at ${DEV_SERVER_IP}..."
                 sh '''
-                    scp -o StrictHostKeyChecking=no -i ${PRIVATE_KEY_PATH} index.html ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
+                    # Use rsync for deployment
+                    rsync -avz -e "ssh -i ${PRIVATE_KEY_PATH} -o StrictHostKeyChecking=no" index.html ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
                 '''
             }
         }
