@@ -15,7 +15,7 @@ pipeline {
 
                 // Rsync deployment command
                 sh """
-                    rsync -av ${WORKSPACE} ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
+                    rsync -av --exclude ".git/" \ ${WORKSPACE}/* ${USERNAME}@${DEV_SERVER_IP}:/var/www/noor.com/public_html/
                 """
             }
         }
