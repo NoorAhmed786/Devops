@@ -53,11 +53,11 @@ sudo mkdir -p /var/www/noor.com/public_html
 sudo chown -R $USER:$USER /var/www/noor.com/public_html
 ```
 
-### ***Create virtual host file:***
+Create virtual host file:
 ```bash
 sudo nano /etc/apache2/sites-available/noor.com.conf
 ```
-### ***Example content:***
+Example content:
 ```bash
 <VirtualHost *:80>
     ServerAdmin admin@noor.com
@@ -67,32 +67,32 @@ sudo nano /etc/apache2/sites-available/noor.com.conf
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
-### ***Enable the site and reload Apache:***
+Enable the site and reload Apache:
 ```bash
 sudo a2ensite noor.com.conf
 sudo systemctl reload apache2
 sudo systemctl restart apache2
 ```
-
+--
 ### **3. Install Git & Setup GitHub SSH Authenticationb**
-#Install Git:
+Install Git:
 ```bash
 sudo apt install git -y
 git --version
 ```
-# Generate SSH key:
+Generate SSH key:
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-# Copy key to remote Ubuntu server:
+Copy key to remote Ubuntu server:
 ```bash
 ssh-copy-id -i ~/.ssh/id_ed25519 vboxuser@192.168.56.105
 ```
-# Test password-less SSH:
+Test password-less SSH:
 ```bash
 ssh -i ~/.ssh/id_ed25519 vboxuser@192.168.56.105
 ```
-# Clone the GitHub repository:
+Clone the GitHub repository:
 ```bash
 git clone git@github.com:NoorAhmed786/Devops.git
 cd Devops
